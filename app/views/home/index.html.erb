@@ -1,1 +1,17 @@
-<h1>Welcome</h1>
+<div class="container">
+    <h1> Welcome</h1>
+</div>
+
+<div class="container">
+    <% @questions.each do |q| %>
+        <div class="media">
+            <div class="media-left">
+                <img src="<%= q.gravatar %>" class="media-object" style="width:60px">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><%= q.email %> asked: </h4>
+                <p><%= q.body %></p>
+            </div>
+        </div>
+    <% end %>
+</div>
