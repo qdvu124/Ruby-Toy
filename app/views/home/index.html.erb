@@ -6,11 +6,15 @@
     <% @questions.each do |q| %>
         <div class="media">
             <div class="media-left">
-                <img src="<%= q.gravatar %>" class="media-object" style="width:60px">
+                <a href="#">
+                    <img src="<%= q.gravatar %>" class="media-object" style="width:60px min-height=100%">
+                </a>
             </div>
-            <div class="media-body">
+            <div class="media-body" style="min-height=100%">
                 <h4 class="media-heading"><%= q.email %> asked: </h4>
-                <p><%= q.body %></p>
+                <div><%= time_ago_in_words q.created_at %> ago </div>
+                <div><%= q.body %></div>
+                <div><a href="<%= question_path(q) %>" class="btn btn-success btn-xs"> View Answers </a></div>
             </div>
         </div>
     <% end %>
