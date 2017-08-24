@@ -12,7 +12,7 @@
     <form><a href="#" class="btn btn-success navbar-btn btn-sm" data-toggle="modal" data-target="#new-answer-modal"> Add an answer </a></form>
     <%= render('home/new_answer_form') %>
 
-    <% @question.answers.each do |answer| %>
+    <% @answers.each do |answer| %>
         <div class="media">
             <div class="media-left">
                 <a href="#">
@@ -26,4 +26,9 @@
             </div>
         </div>
     <% end %>
+
+    <% if @answers.empty? %>
+        <div class="alert alert-info"> Nothing here yet, be the first to answer? </div>
+    <% end %>
+
 </div>
